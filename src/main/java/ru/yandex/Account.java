@@ -9,10 +9,7 @@ public class Account {
 	}
 
 	public boolean checkNameToEmboss() {
-		return name != null && name.length() >=3 && name.length() <= 19
-				&& !name.startsWith(" ") && !name.endsWith(" ")
-				&& name.contains(" ")
-				&& name.lastIndexOf(" ") == name.indexOf(" ");
+		return name != null && name.matches("(?=^.{3,19}$)\\S+ \\S+");
 	}
 
 }
